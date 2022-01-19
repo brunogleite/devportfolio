@@ -3,3 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.btn{
+    @apply bg-orange-500 text-white font-bold py-5 px-20 rounded-md cursor-pointer text-center shadow-2xl hover:-translate-y-3 transition-all
+} 
