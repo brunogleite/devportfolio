@@ -1,8 +1,10 @@
-import { sneaker } from "./Mock"
+import { sneaker } from "./Mock";
+
+import Counter from "../Counter"
 
 function Info(){
     return(
-        <div className="w-full ml-0  md:w-6/12 ml-32 border-2 border-blue-500">
+        <div className="w-6/12 ml-32 border-2 border-blue-500 md:w-full ml-0">
             {sneaker.map((item, id) => {
                 return (
                     <div key = {id} className="font-display w-96">
@@ -21,9 +23,12 @@ function Info(){
                     </div>
                 )
             })}
+
+            
             <div className="btn">
                 <p>Add to cart</p>
             </div>
+            <Counter />
         </div>
     )
 }

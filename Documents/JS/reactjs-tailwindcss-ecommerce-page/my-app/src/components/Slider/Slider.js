@@ -39,7 +39,7 @@ function Slider(){
                     alt={"Product image " + data.id}
                     key={data.id}
                     draggable="false"
-                    className={product === index ? " hidden rounded-lg border-2 border-amber-500 opacity-40 w-20 h-20 ml-7 aspect-square md:block" : "hidden rounded-lg w-20 h-20 ml-7 aspect-square md:block"} />
+                    className={product === index ? " hidden rounded-lg border-2 border-amber-500 opacity-40 w-20 h-20 ml-7 aspect-square md:block first:ml-0" : "hidden rounded-lg w-20 h-20 ml-7 aspect-square first:ml-0 md:block "} />
                    )
                })}
            </div>
