@@ -5,11 +5,22 @@
     min-height: 100vh;
 
     &__container{
-        max-width: 1770px;
-        margin-inline: auto;
+        //max-width: 1770px;
+        //margin-inline: auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+        &-title{
+            padding-bottom: 40px;
+            padding-top: 142px;
+            h1{
+                font-size: clamp(3rem , calc(max(3rem, 4.5vw + 1rem)) , 5.5rem); //calc(max(3rem, 4.5vw + 1rem))
+                letter-spacing: -4px; 
+                text-transform: uppercase;
+            }
+            
+        }
 
         &-projects{
             display: flex;
@@ -25,12 +36,31 @@
             .project__first, .project__second, .project__third{
                 border: 1px solid red;
                 width: 33%;
+
                 &-image{
-                    max-width: 577px;
+                    //max-width: 577px;
                     width: 100%;
                     min-height: 426px;
+                    //aspect-ratio: 1 / 1;
                     background-color: white;
-                    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
+                    transition: all 0.3s ease-in-out;
+                    cursor: pointer;
+                    background-image: url(/healthUI.png);
+                    background-position: center;
+                    background-size: cover;
+                    position: relative;
+
+                    &:hover{
+                        transform: translateY(-10px);
+                        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
+                    }    
+
+                    .layer{
+                        position: absolute;
+                        inset: 0;
+                        background-color: red;
+                        opacity: 0;
+                    }
                 }
 
                 &-details{
@@ -40,13 +70,17 @@
                         align-items: center;
                         margin-top: 24px;
                         margin-bottom: 32px;
+                        row-gap: 16px;
+                        column-gap: 8px;
+                        
 
                         >div{
-                            margin-right: 16px;
+                            //margin-right: 16px;
                             background-color: white;
                             border-radius: 32px;
                             padding: 8px 16px;
                             user-select: none;
+                            
                         }
                     }
 
@@ -72,10 +106,55 @@
                 }
             }   
         }
+
+        &-social{
+            display: flex;
+            align-items: center;
+            width: 80%;
+            margin: 72px auto;
+            .bar{
+                background-color: black;
+                width: 25%;
+                height: 1px;
+            }
+
+            .bar-social{
+                //flex-grow: 1;
+                width: 50%;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-around;
+
+                >a{
+                    display: inline-block;
+                    width: 50px;
+                    height: 50px;
+                }
+
+                .github{
+                    background-image: url(/GitHub.svg);
+                }
+
+                .linkedin{
+                    background-image: url(/LinkedIn.svg);
+                }
+
+                .twitter{
+                    background-image: url(/Twitter.svg);
+                }
+
+                .github, .linkedin, .twitter{
+                    transition: all 0.3s ease-in-out;
+                    &:hover{
+                        transform: translateY(-10px);
+                    }
+                }
+            }
+        }
     }
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 1024px){
 
     .portfolio{
         background-color: var(--bgcolor) ;
@@ -84,10 +163,17 @@
         &__container{
             max-width: 1770px;
             margin: 0 auto;
+
+            &-title{
+
+                h1{
+                    line-height: 1.0;
+                }
+            }
     
             &-projects{
-                display: flex;
-                align-items: center;
+                flex-direction: column;
+               
     
                 >div{
     
@@ -98,11 +184,13 @@
     
                 .project__first, .project__second, .project__third{
                     border: 1px solid red;
-                    width: 33%;
+                    width: 80%;
+                    margin-bottom: 5em;
+
                     &-image{
-                        max-width: 577px;
+                        //max-width: 577px;
                         width: 100%;
-                        min-height: 426px;
+                        min-height: 226px;
                         background-color: white;
                         box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
                     }
@@ -112,7 +200,6 @@
                         &-label{
                             display: flex;
                             flex-wrap: wrap;
-                            align-items: center;
                             margin-top: 24px;
                             margin-bottom: 32px;
     
@@ -126,7 +213,7 @@
                         }
     
                         &-title{
-    
+            
                         }
     
                         &-links{
@@ -136,6 +223,8 @@
                                 display: block;
                                 text-decoration: none;
                                 color: var(--disablecolor);
+                                border: 1px solid red;
+                                padding: 8px 0;
                             }
     
                             a{
