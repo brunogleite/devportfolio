@@ -34,8 +34,8 @@
             }
 
             .project__first, .project__second, .project__third{
-                border: 1px solid red;
                 width: 33%;
+                position: relative;
 
                 &-image{
                     //max-width: 577px;
@@ -45,7 +45,6 @@
                     background-color: white;
                     transition: all 0.3s ease-in-out;
                     cursor: pointer;
-                    background-image: url(/healthUI.png);
                     background-position: center;
                     background-size: cover;
                     position: relative;
@@ -53,13 +52,54 @@
                     &:hover{
                         transform: translateY(-10px);
                         box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
+
+                        .layer{
+
+                            background-color: rgb(26, 26, 26);
+                            opacity: 0.5;
+                        }
+                        
                     }    
+
+                    &-UI{
+                        background-image: url(/healthUI.png);
+                    }
+
+                    &-ecommerce{
+                        background-image: url(/aluracord.png);
+                    }
+
+                    &-chat{
+                        background-image: url(/aluracord.png);
+                    }   
 
                     .layer{
                         position: absolute;
                         inset: 0;
-                        background-color: red;
-                        opacity: 0;
+                        transition: all 0.3s ease-in-out;
+
+                        &:hover{
+
+                            >p{
+                                display: block;
+                            }
+                        }
+                    }
+
+                    >p{
+                        display: none;
+                        color: white;
+                        position: absolute;
+                        right: 50%;
+                        top: 50%;
+                        transform: translate(50%, -50%);
+                    }
+
+                    &:hover{
+                        
+                        >p{
+                            display: block;
+                        }
                     }
                 }
 
@@ -90,17 +130,42 @@
 
                     &-links{
                         margin-top: 24px;
+                        display: flex;
+                        align-items: flex-start;
+                        transition: all 0.3s ease-in-out;
+                        cursor: pointer;
+
+                        &:hover{
+                            
+                            transform: translateY(-10px);
+                            transition: all 0.3s ease-in-out;
+
+                            span, a{
+                                display: block;
+                                color: black;
+                            }
+                        }
 
                         > a {
                             display: block;
                             text-decoration: none;
-                            color: var(--disablecolor);
+                            color: var(--disablecolor);     
                         }
 
                         a{
                             &:last-child{
                                 margin-top: 16px;
                             }
+                        }
+
+                        span{
+                            display: none;
+                            width: 16px;
+                            height: 16px;
+                            background-image: url(/extern-link.svg);
+                            background-position: center center;
+                            margin-left: 8px;
+
                         }
                     }
                 }
@@ -183,7 +248,6 @@
                 }
     
                 .project__first, .project__second, .project__third{
-                    border: 1px solid red;
                     width: 80%;
                     margin-bottom: 5em;
 
@@ -223,7 +287,6 @@
                                 display: block;
                                 text-decoration: none;
                                 color: var(--disablecolor);
-                                border: 1px solid red;
                                 padding: 8px 0;
                             }
     

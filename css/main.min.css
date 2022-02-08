@@ -54,8 +54,8 @@
 }
 
 .portfolio__container-projects .project__first, .portfolio__container-projects .project__second, .portfolio__container-projects .project__third {
-  border: 1px solid red;
   width: 33%;
+  position: relative;
 }
 
 .portfolio__container-projects .project__first-image, .portfolio__container-projects .project__second-image, .portfolio__container-projects .project__third-image {
@@ -65,7 +65,6 @@
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
-  background-image: url(/healthUI.png);
   background-position: center;
   background-size: cover;
   position: relative;
@@ -78,11 +77,46 @@
           box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
 }
 
+.portfolio__container-projects .project__first-image:hover .layer, .portfolio__container-projects .project__second-image:hover .layer, .portfolio__container-projects .project__third-image:hover .layer {
+  background-color: #1a1a1a;
+  opacity: 0.5;
+}
+
+.portfolio__container-projects .project__first-image-UI, .portfolio__container-projects .project__second-image-UI, .portfolio__container-projects .project__third-image-UI {
+  background-image: url(/healthUI.png);
+}
+
+.portfolio__container-projects .project__first-image-ecommerce, .portfolio__container-projects .project__second-image-ecommerce, .portfolio__container-projects .project__third-image-ecommerce {
+  background-image: url(/aluracord.png);
+}
+
+.portfolio__container-projects .project__first-image-chat, .portfolio__container-projects .project__second-image-chat, .portfolio__container-projects .project__third-image-chat {
+  background-image: url(/aluracord.png);
+}
+
 .portfolio__container-projects .project__first-image .layer, .portfolio__container-projects .project__second-image .layer, .portfolio__container-projects .project__third-image .layer {
   position: absolute;
   inset: 0;
-  background-color: red;
-  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.portfolio__container-projects .project__first-image .layer:hover > p, .portfolio__container-projects .project__second-image .layer:hover > p, .portfolio__container-projects .project__third-image .layer:hover > p {
+  display: block;
+}
+
+.portfolio__container-projects .project__first-image > p, .portfolio__container-projects .project__second-image > p, .portfolio__container-projects .project__third-image > p {
+  display: none;
+  color: white;
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+}
+
+.portfolio__container-projects .project__first-image:hover > p, .portfolio__container-projects .project__second-image:hover > p, .portfolio__container-projects .project__third-image:hover > p {
+  display: block;
 }
 
 .portfolio__container-projects .project__first-details-label, .portfolio__container-projects .project__second-details-label, .portfolio__container-projects .project__third-details-label {
@@ -111,6 +145,27 @@
 
 .portfolio__container-projects .project__first-details-links, .portfolio__container-projects .project__second-details-links, .portfolio__container-projects .project__third-details-links {
   margin-top: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.portfolio__container-projects .project__first-details-links:hover, .portfolio__container-projects .project__second-details-links:hover, .portfolio__container-projects .project__third-details-links:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.portfolio__container-projects .project__first-details-links:hover span, .portfolio__container-projects .project__first-details-links:hover a, .portfolio__container-projects .project__second-details-links:hover span, .portfolio__container-projects .project__second-details-links:hover a, .portfolio__container-projects .project__third-details-links:hover span, .portfolio__container-projects .project__third-details-links:hover a {
+  display: block;
+  color: black;
 }
 
 .portfolio__container-projects .project__first-details-links > a, .portfolio__container-projects .project__second-details-links > a, .portfolio__container-projects .project__third-details-links > a {
@@ -121,6 +176,15 @@
 
 .portfolio__container-projects .project__first-details-links a:last-child, .portfolio__container-projects .project__second-details-links a:last-child, .portfolio__container-projects .project__third-details-links a:last-child {
   margin-top: 16px;
+}
+
+.portfolio__container-projects .project__first-details-links span, .portfolio__container-projects .project__second-details-links span, .portfolio__container-projects .project__third-details-links span {
+  display: none;
+  width: 16px;
+  height: 16px;
+  background-image: url(/extern-link.svg);
+  background-position: center center;
+  margin-left: 8px;
 }
 
 .portfolio__container-social {
@@ -200,7 +264,6 @@
     margin-right: 20px;
   }
   .portfolio__container-projects .project__first, .portfolio__container-projects .project__second, .portfolio__container-projects .project__third {
-    border: 1px solid red;
     width: 80%;
     margin-bottom: 5em;
   }
@@ -237,7 +300,6 @@
     display: block;
     text-decoration: none;
     color: var(--disablecolor);
-    border: 1px solid red;
     padding: 8px 0;
   }
   .portfolio__container-projects .project__first-details-links a:last-child, .portfolio__container-projects .project__second-details-links a:last-child, .portfolio__container-projects .project__third-details-links a:last-child {
