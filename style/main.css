@@ -77,6 +77,14 @@
           box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
 }
 
+.portfolio__container-projects .project__first-image:hover .pulse-layer, .portfolio__container-projects .project__second-image:hover .pulse-layer, .portfolio__container-projects .project__third-image:hover .pulse-layer {
+  opacity: 1;
+}
+
+.portfolio__container-projects .project__first-image:hover .pulse-layer > p, .portfolio__container-projects .project__second-image:hover .pulse-layer > p, .portfolio__container-projects .project__third-image:hover .pulse-layer > p {
+  opacity: 1;
+}
+
 .portfolio__container-projects .project__first-image:hover .layer, .portfolio__container-projects .project__second-image:hover .layer, .portfolio__container-projects .project__third-image:hover .layer {
   background-color: #1a1a1a;
   opacity: 0.5;
@@ -87,11 +95,15 @@
 }
 
 .portfolio__container-projects .project__first-image-ecommerce, .portfolio__container-projects .project__second-image-ecommerce, .portfolio__container-projects .project__third-image-ecommerce {
-  background-image: url(/portfolio-ecommerce.png);
+  background-image: url(/entertainment-web-app.png);
+  background-position: center;
+  background-size: cover;
 }
 
 .portfolio__container-projects .project__first-image-chat, .portfolio__container-projects .project__second-image-chat, .portfolio__container-projects .project__third-image-chat {
-  background-image: url(/aluracord.png);
+  background-image: url(/feedback-suggestion.png);
+  background-position: center;
+  background-size: cover;
 }
 
 .portfolio__container-projects .project__first-image .layer, .portfolio__container-projects .project__second-image .layer, .portfolio__container-projects .project__third-image .layer {
@@ -117,6 +129,71 @@
 
 .portfolio__container-projects .project__first-image:hover > p, .portfolio__container-projects .project__second-image:hover > p, .portfolio__container-projects .project__third-image:hover > p {
   display: block;
+}
+
+.portfolio__container-projects .project__first .pulse-layer, .portfolio__container-projects .project__second .pulse-layer, .portfolio__container-projects .project__third .pulse-layer {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.portfolio__container-projects .project__first .pulse-layer .pulse, .portfolio__container-projects .project__second .pulse-layer .pulse, .portfolio__container-projects .project__third .pulse-layer .pulse {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #dede13;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 0 rgba(204, 183, 44, 0.4);
+          box-shadow: 0 0 0 rgba(204, 183, 44, 0.4);
+  -webkit-animation: pulse 2s infinite;
+          animation: pulse 2s infinite;
+}
+
+.portfolio__container-projects .project__first .pulse-layer .pulse:hover, .portfolio__container-projects .project__second .pulse-layer .pulse:hover, .portfolio__container-projects .project__third .pulse-layer .pulse:hover {
+  -webkit-animation: none;
+          animation: none;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+            box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+            box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+            box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+  }
+}
+
+.portfolio__container-projects .project__first .pulse-layer > p, .portfolio__container-projects .project__second .pulse-layer > p, .portfolio__container-projects .project__third .pulse-layer > p {
+  font-size: 1rem;
+  color: white;
+  opacity: 0;
+  margin-left: 16px;
 }
 
 .portfolio__container-projects .project__first-details-label, .portfolio__container-projects .project__second-details-label, .portfolio__container-projects .project__third-details-label {
@@ -266,6 +343,7 @@
   .portfolio__container-projects .project__first, .portfolio__container-projects .project__second, .portfolio__container-projects .project__third {
     width: 80%;
     margin-bottom: 5em;
+    position: relative;
   }
   .portfolio__container-projects .project__first-image, .portfolio__container-projects .project__second-image, .portfolio__container-projects .project__third-image {
     width: 100%;
@@ -368,4 +446,4 @@ p, h1, h2, h3, h4, h5, h6 {
 #root, #__next {
   isolation: isolate;
 }
-/*# sourceMappingURL=main.min.css.map */
+/*# sourceMappingURL=main.css.map */
